@@ -6,11 +6,15 @@ system:
 
 spring:
   application:
-    name: servicio-autenticacion
+    name: auth-service
   datasource:
     url: jdbc:mysql://localhost:3306/dwb2025-2_test
-    password: Hola$123., 
-    username: root 
+
+    # Intenta leer la variable de entorno DB_PASSWORD.
+    # Si no existe, usa "Hola$123.,"
+    password: ${DB_PASSWORD:Hola$123.,}
+
+    username: root
   jpa:
     open-in-view: false
     show-sql: true
@@ -21,9 +25,9 @@ spring:
         dialect: org.hibernate.dialect.MySQL8Dialect
 
 springdoc:
-    swagger-ui:
-        operations-sorter: method
-        default-model-expand-depth: 5
-        default-model-rendering: model
-    packagesToScan: com.unam.dwb.auth.controller
-    pathsToMatch: /**
+  swagger-ui:
+    operations-sorter: method
+    default-model-expand-depth: 5
+    default-model-rendering: model
+  packagesToScan: com.unam.dwb.auth.controller
+  pathsToMatch: /**

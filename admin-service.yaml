@@ -1,10 +1,10 @@
 spring:
  application:
-   name: admin-server
+   name: admin-service
  boot:
    admin:
      discovery:
-       enabled: true      # LE DICES al Admin que use Eureka para descubrir tus APIs
+       enabled: true      
 server:
  port: 9090
 eureka:
