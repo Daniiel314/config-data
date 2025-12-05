@@ -8,7 +8,7 @@ spring:
   application:
     name: auth-service
   datasource:
-    url: jdbc:mysql://localhost:3306/dwb2025-2_test
+    url: jdbc:mysql://localhost:3306/dwb
 
     # Intenta leer la variable de entorno DB_PASSWORD.
     # Si no existe, usa "Hola$123.,"
